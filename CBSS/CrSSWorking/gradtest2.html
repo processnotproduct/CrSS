@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+  text { font-family: serif; font-size: 40; }
+</style>
+</head>
+<body>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.5.0"></script>
+<script type="text/javascript">
+ 
+  var svg = d3.select("body")
+  .append("svg:svg")
+  .attr("width", 256)
+  .attr("height", 256);
+ 
+var defs = svg.append('svg:defs');
+ 
+defs.append('svg:linearGradient')
+  .attr('gradientUnits', 'userSpaceOnUse')
+  .attr('x1', 0).attr('y1', 0).attr('x2', 20).attr('y2', 0)
+  .attr('id', 'master').call(
+      function(gradient) {
+        gradient.append('svg:stop').attr('offset', '0%').attr('style', 'stop-color:rgb(0,0,0);stop-opacity:1');
+        gradient.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(0,0,0);stop-opacity:0');
+      });
+ 
+var data = [[0, 30], [1, 60], [2, 180], [3, 70], [4, 42], [5, 64]];
+var text = "xyzzy xyzzy xyzzy xyzzy xyzzy";
+ 
+defs.selectAll('.gradient').data(data)
+  .enter().append('svg:linearGradient')
+  .attr('id', function(d, i) { return 'gradient' + i; })
+  .attr('class', 'gradient')
+  .attr('xlink:href', '#master')
+  .attr('gradientTransform', function(d) { return 'translate(' + d[1] + ')'; });
+ 
+svg.selectAll('text').data(data)
+  .enter().append('svg:text')
+  .attr('fill', function(d, i) { return 'url(#gradient' + i + ')'; })
+  .attr('x', 0)
+  .attr('y', function(d, i) { return (i+1) * 20; })
+  .text(text);
+
+  </script>
+</body>
+</html>
