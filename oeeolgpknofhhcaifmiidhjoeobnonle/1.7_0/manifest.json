@@ -1,0 +1,17 @@
+{
+   "app": {
+      "launch": {
+         "local_path": "background.html"
+      }
+   },
+   "description": "Screensaver - US,UK,AU,CA",
+   "icons": {
+      "128": "128x128.jpg",
+      "16": "16x16.jpg"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIKnco35yTAo/xjEzWHVoJLWL37wsDgYN9ZQpu7Ckis40HPH45wtsyxUd/Xr1AXPBAH/DN0g8rDgyU3JtxVsDudDZ/ObGrJRnDKBUIdWd0r8F219oGTOcMOcW/rkosRR2X+IPmtXibPb73UvWVRUVaGq/9/nXgPQCrUnIS8T1/nQIDAQAB",
+   "manifest_version": 2,
+   "name": "Screensaver - US,UK,AU,CA",
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.7"
+}
