@@ -9,10 +9,10 @@
     "128": "CrSS_Icon_128.png",
     "16": "CrSS_Icon_16.png"
   },
-  "permissions": [
-  "screensaver",
-  ],
   "manifest_version": 2,
   "name": "CrSS v3",
-  "version": "3.0"
+  "version": "3.0",
+  "permissions": [
+  "screensaver"
+  ]
 }
